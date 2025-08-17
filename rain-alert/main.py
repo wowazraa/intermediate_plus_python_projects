@@ -7,10 +7,10 @@ auth_token  = os.getenv("TWILIO_AUTH_TOKEN")
 from_number = os.getenv("TWILIO_FROM")
 
 OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast"
-API_key = "95b2377a6825f07f200fba84c92305c7"
+api_key = os.getenv("API_Key")
 
 weather_params = {
-    "appid": API_key,
+    "appid": api_key,
     "lat": 11.09596000,
     "lon": 11.33261000,
     "cnt": 4,
