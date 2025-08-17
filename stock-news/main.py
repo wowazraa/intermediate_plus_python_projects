@@ -6,8 +6,8 @@ account_sid = os.getenv("TWILIO_ACCOUNT_SID")
 auth_token  = os.getenv("TWILIO_AUTH_TOKEN")
 from_number = os.getenv("TWILIO_FROM")
 
-NEWS_API_KEY = "4a85117c98c9485b8ebffc598ebbd9cc"
-STOCK_API_KEY = "GMICM439C779SFNK"
+news_api_key = os.getenv("NEWS_API_KEY")
+stock_api_key = os.getenv("STOCK_API_KEY")
 
 STOCK = "UNH"
 COMPANY_NAME = "UnitedHealth"
@@ -18,9 +18,8 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 stock_params = {
     "function": "TIME_SERIES_DAILY",
     "symbol": STOCK,
-    "apikey": STOCK_API_KEY
+    "apikey": stock_api_key
 }
-
 stock_response = requests.get(STOCK_ENDPOINT, params=stock_params)
 stock_response.raise_for_status()
 
@@ -40,7 +39,7 @@ else:
 
 news_params = {
     "qInTitle": COMPANY_NAME,
-    "apiKey": NEWS_API_KEY,
+    "apiKey": news_api_key,
 }
 
 news_response = requests.get(NEWS_ENDPOINT, params=news_params)
