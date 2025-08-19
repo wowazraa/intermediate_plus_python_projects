@@ -85,6 +85,7 @@ def check_and_send():
                         connection.sendmail(from_addr=EMAIL,
                                             to_addrs=person["email"],
                                             msg=f"Subject:Reminder:\n\n{reminder}")
+                        
 # -------------------------------------- GUI -------------------------------------- #
 window = Tk()
 window.title("Birthday Saver")
