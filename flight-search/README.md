@@ -1,34 +1,39 @@
-# Flight Deals Finder
+# Flight Search Project ✈️
 
-A Python-based project that searches for the cheapest flight deals using the Amadeus API and stores/retrieves data from Google Sheets through Sheety API.
-It also sends email notifications to subscribed users whenever a cheaper flight is found.
+This project searches for cheap flights using the Amadeus API and notifies users via email.  
+It integrates with Google Sheets through the Sheety API to manage destinations and users.  
 
-# Environment Variables
+## Features
+- Fetches flight deals from the Amadeus API  
+- Stores and retrieves data from Google Sheets using Sheety  
+- Sends email notifications to users when deals are found  
+- Secure API keys and credentials with `.env` file
 
-Create a .env file in the project root with the following values:
+## Environment Variables
 
+Create a `.env` file in the project root with the following content:
 
-SHEETY_USERNAME=your_username
-SHEETY_PASSWORD=your_password
-SHEETY_PRICES_ENDPOINT=https://api.sheety.co/.../prices
-SHEETY_USERS_ENDPOINT=https://api.sheety.co/.../users
+```env
+SHEETY_USERNAME= 
+SHEETY_PASSWORD= 
+SHEETY_PRICES_ENDPOINT= 
+SHEETY_USERS_ENDPOINT= 
+SHEETY_AUTH= 
 
-AMADEUS_API_KEY=your_amadeus_api_key
-AMADEUS_SECRET=your_amadeus_secret
+AMADEUS_API_KEY= 
+AMADEUS_SECRET= 
 
+EMAIL_ADDRESS= 
+EMAIL_PASSWORD= 
+SMTP_SERVER= 
+SMTP_PORT= 
+```
+⚠️ Do not share your .env file publicly.
 
-EMAIL_ADDRESS=your_email@example.com
-EMAIL_PASSWORD=your_email_password
-SMTP_SERVER=smtp.gmail.com
-SMTP_PORT=587
+## Notes
 
-Important: If you use Gmail, make sure to enable App Passwords instead of your regular password.
+The Amadeus API requires you to create an account and get test credentials.
 
+Sheety API requires you to connect your Google Sheet.
 
-# Example Email
-
-Subject: New Flight Deal!
-Body:
-
-New flight deal!
-LHR -> JFK for GBP 320 (direct)
+Emails are sent using Gmail SMTP (enable "App Passwords" or "Less secure apps" depending on your Gmail settings).
